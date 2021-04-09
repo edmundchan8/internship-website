@@ -10,6 +10,7 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { AdminComponent } from './admin/admin.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NewsComponent } from './news/news.component';
+import { InternshipDetailsComponent } from './internship-details/internship-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NewsComponent } from './news/news.component';
     AdminComponent,
     CarouselComponent,
     NewsComponent,
-    routingComponents
+    routingComponents,
+    InternshipDetailsComponent
   ],
   imports: [
     BrowserModule,

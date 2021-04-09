@@ -1,0 +1,12 @@
+<h1>Internship Details</h1>
+<div>
+    {{ this.internshipID }}
+    {{ this.internship.jobTitle }}
+    {{ this.internship.company }}
+    {{ this.internship.companyLogo }}
+    {{ this.internship.description }}
+    {{ this.internship.startDate }}
+</div>
+<button [disabled]="internshipID === disablePreviousID" (click)="onPrevious()">Previous</button>
+<br>
+<button [disabled]="internshipID === disableNextID" (click)="onNext()">Next</button>

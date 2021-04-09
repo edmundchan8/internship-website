@@ -1,3 +1,8 @@
-
 <p>carousel works!</p>
+<ul>
+    <li *ngFor="let internship of Internships" (click)="onSelect(internship)">
+        <h3>{{ internship.jobTitle }}</h3>
+    </li>
+</ul>
+<img routerLink="/internship-details" class="img-fluid img-thumbnail" src="../../assets/images/job-example.png" alt="image of a fake internship job that appears clickable" />
 <button routerLink="/advanced-search">View all available Internships</button>

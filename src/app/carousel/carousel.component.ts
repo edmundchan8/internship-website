@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
-
+import { Internship } from '../internship';
+import { InternshipService } from '../internship.service';
 
 @Component({
   selector: 'app-carousel',
@@ -9,13 +10,24 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  Internships: Internship[]
+
+  constructor(private route: ActivatedRoute, private router: Router,
+    public internshipService: InternshipService) {
+   }
 
   ngOnInit(): void {
+    this.getInternships()
   }
 
-  goToAdvancedSearch(){
-    this.router.navigate(['advanced-search'], {relativeTo: this.route})
+  getInternships(): void {
+    this.internshipService.getInternships()
+      .subscribe( internships => {
+        this.Internships = internships
+      })
   }
 
+  onSelect(internship: Internship){
+    this.router.navigate(['/internship-details', internship.id])
+  }
 }
